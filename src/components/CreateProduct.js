@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import axios from 'axios';
 
 function CreateProduct() {
 
@@ -17,6 +18,8 @@ function CreateProduct() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    axios.post('http://localhost:4000/api/save', inputs);
     console.log(inputs)
   }
   
